@@ -1,0 +1,7 @@
+# FORM. 0.2.1 beta — direct logging
+
+Replace index.html and sw.js in the repository root. No changes to storage keys, schema version, OAuth configuration, Drive sync protocol, or gym/exercise identifiers.
+
+- Select gym (remembered), workout category, equipment, then exercise (Log). The first selected exercise opens an active workout directly, without a planning or configuration step. Add further exercises during the session.
+- New equipment profiles are created automatically (kg, equipment-specific load convention, 2.5 kg increment); existing profiles are reused for the same exercise and gym when possible. New exercises start with three empty rep rows; subsequent sessions use the previous completed set count and rep range. Add/remove sets freely. Change machine using the optional collapsed control before entering reps; recorded sets are not reassigned. Explicit machine selection is still necessary when using a different physical machine. Existing profiles/settings are preserved; notes and increment remain editable in Program. New machine unit/load convention use defaults in this streamlined release.
+- No RIR or warm-up logging. Previous records remain as stored. Actual cloud sync, service worker update and migration from deployed accounts need testing after upload. Browser tests with simulated local storage passed direct logging, adding another exercise, saving history, retrieving previous performance and separating an alternate machine. Live navigation was blocked by the test environment.
